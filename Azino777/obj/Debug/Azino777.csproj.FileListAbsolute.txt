@@ -8,3 +8,13 @@ C:\Users\bosst\OneDrive\Рабочий стол\Azino777\Azino777\obj\Debug\Azin
 C:\Users\bosst\OneDrive\Рабочий стол\Azino777\Azino777\obj\Debug\Azino777.exe
 C:\Users\bosst\OneDrive\Рабочий стол\Azino777\Azino777\obj\Debug\Azino777.pdb
 C:\Users\bosst\OneDrive\Рабочий стол\Azino777\Azino777\obj\Debug\Azino777.Form1.resources
+C:\Users\Сигма\Desktop\az\Azino777\bin\Debug\Azino777.exe.config
+C:\Users\Сигма\Desktop\az\Azino777\bin\Debug\Azino777.exe
+C:\Users\Сигма\Desktop\az\Azino777\bin\Debug\Azino777.pdb
+C:\Users\Сигма\Desktop\az\Azino777\obj\Debug\Azino777.csprojAssemblyReference.cache
+C:\Users\Сигма\Desktop\az\Azino777\obj\Debug\Azino777.Form1.resources
+C:\Users\Сигма\Desktop\az\Azino777\obj\Debug\Azino777.Properties.Resources.resources
+C:\Users\Сигма\Desktop\az\Azino777\obj\Debug\Azino777.csproj.GenerateResource.cache
+C:\Users\Сигма\Desktop\az\Azino777\obj\Debug\Azino777.csproj.CoreCompileInputs.cache
+C:\Users\Сигма\Desktop\az\Azino777\obj\Debug\Azino777.exe
+C:\Users\Сигма\Desktop\az\Azino777\obj\Debug\Azino777.pdb

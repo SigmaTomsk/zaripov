@@ -18,42 +18,66 @@ namespace Azino777
         }
         int bank_Player = 10000;
         int bank_Kazino = 10000;
+        int stavka_Player = 0, stavka_Kazino = 0;
+        int chislo_Player = 0, chislo_Kazino = 0;
+
         private void Form1_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
+       
         private void button1_Click(object sender, EventArgs e)
         {
             Random R = new Random();
-            int stavka_Player = 0,stavka_Kazino = 0;
-            int chislo_Player=0,chislo_Kazino = 0;
-            if ((Convert.ToInt32(textBox1.Text) >=100) && (Convert.ToInt32(textBox1.Text)<=1000))
-            {
-                stavka_Player = Convert.ToInt32(textBox1.Text);
-                bank_Player -= stavka_Player;
-            }
-            if ((Convert.ToInt32(textBox2.Text)>=1) && (Convert.ToInt32(textBox2.Text)<=100))
-            {
-                chislo_Player = Convert.ToInt32(textBox2.Text);
-            }
 
-
-            textBox3.Text = Convert.ToString(R.Next(100, 1000));
-            stavka_Kazino = Convert.ToInt32(textBox3.Text);
-            bank_Kazino -= stavka_Kazino;
-            textBox4.Text= Convert.ToString(R.Next(1, 100));
-            chislo_Kazino = Convert.ToInt32(textBox4.Text);
+            int n;
+            int proverka2 = 0;
+            
+            if (!int.TryParse(textBox1.Text,out n))
+            {
+                MessageBox.Show("Введите нормальную ставку в виде числа! \n окно ставка");
+                proverka2++;
+            }
+            else
+            {
+                if ((Convert.ToInt32(textBox1.Text) >= 100) && (Convert.ToInt32(textBox1.Text) <= 1000))
+                {
+                    stavka_Player = Convert.ToInt32(textBox1.Text);
+                    bank_Player -= stavka_Player;
+                }
+            }
+            if (!int.TryParse(textBox2.Text, out n))
+            {
+                MessageBox.Show("Введите нормальное число!\n окно число");
+                proverka2++;
+            }
+            else
+            {
+                if ((Convert.ToInt32(textBox2.Text) >= 1) && (Convert.ToInt32(textBox2.Text) <= 100))
+                {
+                    chislo_Player = Convert.ToInt32(textBox2.Text);
+                }
+            }
+            if (proverka2 !=2)
+            {
+                int proverka3 = bank_Kazino;
+                
+                textBox3.Text = Convert.ToString(R.Next(100, 1000));
+                stavka_Kazino = Convert.ToInt32(textBox3.Text);
+                if (proverka2 -stavka_Kazino>=0)
+                {
+                    bank_Kazino -= stavka_Kazino;
+                }
+                else
+                {
+                    
+                }
+                textBox4.Text = Convert.ToString(R.Next(1, 100));
+                chislo_Kazino = Convert.ToInt32(textBox4.Text);
+            }
+            
             int rez = R.Next(1, 100);
             int proverka = chislo_Player - chislo_Kazino;
 
@@ -80,41 +104,72 @@ namespace Azino777
             }
 
 
-           
+            label8.Text = bank_Player + "$";
+            label9.Text = bank_Kazino + "$";
             if (bank_Player<100 && bank_Kazino>=100)
             {
+                label8.Text = bank_Player + "$";
+                label9.Text = bank_Kazino + "$";
                 MessageBox.Show("Казино победил!");
+                bank_Kazino = 10000;
+                bank_Player = 10000;
+                stavka_Player = 0;
+                chislo_Player = 0;
+                stavka_Kazino = 0;
+                chislo_Kazino = 0;
+                textBox1.Clear();
+                textBox2.Clear();
+                textBox3.Clear();
+                textBox4.Clear();
             }
             else if (bank_Player >= 100 && bank_Kazino < 100)
             {
+                label8.Text = bank_Player + "$";
+                label9.Text = bank_Kazino + "$";
                 MessageBox.Show("Игрок победил!");
+                bank_Kazino = 10000;
+                bank_Player = 10000;
+                stavka_Player = 0;
+                chislo_Player = 0;
+                stavka_Kazino = 0;
+                chislo_Kazino = 0;
+                textBox1.Clear();
+                textBox2.Clear();
+                textBox3.Clear();
+                textBox4.Clear();
             }
             else if (bank_Player < 100 && bank_Kazino < 100)
             {
+                label8.Text = bank_Player + "$";
+                label9.Text = bank_Kazino + "$";
                 MessageBox.Show("Ничья!");
+                bank_Kazino = 10000;
+                bank_Player = 10000;
+                stavka_Player = 0;
+                chislo_Player = 0;
+                stavka_Kazino = 0;
+                chislo_Kazino = 0;
+                textBox1.Clear();
+                textBox2.Clear();
+                textBox3.Clear();
+                textBox4.Clear();
             }
-            label8.Text = bank_Player + "$";
-            label9.Text = bank_Kazino + "$";
+           
         }
 
-        private void label1_Click(object sender, EventArgs e)
+
+        private void button2_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
+            bank_Kazino = 10000;
+            bank_Player = 10000;
+            stavka_Player = 0;
+            chislo_Player = 0;
+            stavka_Kazino = 0;
+            chislo_Kazino = 0;
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox3.Clear();
+            textBox4.Clear();
         }
     }
 }
