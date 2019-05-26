@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using SpeechLib;
 
 namespace Parser
 {
@@ -94,6 +95,19 @@ namespace Parser
             this.PB = (sender as PictureBox);
             System.Diagnostics.Process.Start( PB.Tag.ToString());
 
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            SpVoice voice = new SpVoice();
+            voice.Volume = 100;
+            voice.Speak(textBox1.Text, SpeechVoiceSpeakFlags.SVSFDefault);
+            
         }
     }
 }
